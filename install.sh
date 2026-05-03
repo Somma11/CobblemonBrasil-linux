@@ -48,7 +48,6 @@ log "OS detectado: $OS"
 install_deps() {
 local deps=(curl tar)
 
-```
 has_cmd zenity || deps+=(zenity)
 
 # Electron runtime deps (mínimo funcional)
@@ -73,7 +72,6 @@ case "$OS" in
     fedora) sudo dnf install -y "${missing[@]}" ;;
     *) error "Instale manualmente: ${missing[*]}" ;;
 esac
-```
 
 }
 
@@ -109,16 +107,14 @@ fi
 
 get_release() {
 log "Obtendo release mais recente..."
-URL=$(curl -s "https://api.github.com/repos/$REPO/releases/latest" 
-| grep browser_download_url 
-| grep linux.*tar.gz 
+URL=$(curl -s "https://api.github.com/repos/$REPO/releases/latest" \
+| grep browser_download_url \
+| grep linux.*tar.gz \
 | cut -d '"' -f 4 | head -n 1)
 
-```
 [ -z "$URL" ] && error "Não foi possível obter URL da release"
 
 log "Download URL: $URL"
-```
 
 }
 
@@ -145,14 +141,12 @@ ui_confirm "Já existe uma instalação. Reinstalar?" || exit 0
 rm -rf "$INSTALL_DIR"
 fi
 
-```
 mkdir -p "$INSTALL_DIR"
 
 log "Extraindo..."
 tar -xzf "$TMP_FILE" -C "$INSTALL_DIR" --strip-components=1
 
 chmod -R +x "$INSTALL_DIR"
-```
 
 }
 
@@ -165,12 +159,10 @@ chmod -R +x "$INSTALL_DIR"
 create_desktop() {
 EXEC="$INSTALL_DIR/$APP_ID"
 
-```
 # fallback se nome diferente
 [ -f "$EXEC" ] || EXEC=$(find "$INSTALL_DIR" -type f -executable | head -n 1)
 
 cat > "$DESKTOP_FILE" <<EOF
-```
 
 [Desktop Entry]
 Name=$APP_NAME
@@ -180,9 +172,7 @@ Type=Application
 Categories=Game;
 EOF
 
-```
 chmod +x "$DESKTOP_FILE"
-```
 
 }
 
@@ -211,9 +201,7 @@ install_app
 create_desktop
 cleanup
 
-```
 ui_msg "$APP_NAME instalado com sucesso!"
-```
 
 }
 
