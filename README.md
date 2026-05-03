@@ -57,7 +57,7 @@ O **CobblemonBrasil Launcher** nasceu disso: **somma11**, um player do próprio 
 ### Passo 1 — Baixe e execute o instalador
 
 ```bash
-curl -LO https://github.com/Somma11/CobblemonBrasil-linux/releases/latest/download/install.sh
+curl -LO https://raw.githubusercontent.com/Somma11/CobblemonBrasil-linux/refs/heads/main/install.sh
 chmod +x install.sh
 ./install.sh
 ```
@@ -97,7 +97,7 @@ Ou, se você já tem o atalho no menu, basta procurar por **"CobblemonBrasil"** 
 Para remover completamente o launcher e todos os seus arquivos:
 
 ```bash
-curl -LO https://github.com/Somma11/CobblemonBrasil-linux/releases/latest/download/uninstall.sh
+curl -LO https://raw.githubusercontent.com/Somma11/CobblemonBrasil-linux/refs/heads/main/uninstall.sh
 chmod +x uninstall.sh
 ./uninstall.sh
 ```
