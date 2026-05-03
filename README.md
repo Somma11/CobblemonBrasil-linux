@@ -57,7 +57,7 @@ O **CobblemonBrasil Launcher** nasceu disso: **somma11**, um player do próprio 
 ### Passo 1 — Baixe e execute o instalador
 
 ```bash
-curl -LO https://github.com/Somma11/CobblemonBrasil-linux/releases/latest/download/install.sh
+curl -LO https://raw.githubusercontent.com/Somma11/CobblemonBrasil-linux/refs/heads/main/install.sh
 chmod +x install.sh
 ./install.sh
 ```
